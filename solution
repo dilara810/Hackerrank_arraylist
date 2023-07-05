@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+      Scanner scan = new Scanner(System.in);
+      int row = scan.nextInt();
+      int a;//for getting size ,temporary
+      ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
+      
+      //To create a 2D list and add all elements//
+      for (int i = 0; i < row; i++) {
+          a = scan.nextInt();
+          list.add(new ArrayList<Integer>());
+          for(int j =0;j<a;j++){
+              int num=scan.nextInt();
+              list.get(i).add(num);
+            }    
+      }
+      
+      
+      int query = scan.nextInt();
+      
+      for(int i =0;i<query;i++){
+          try{
+              int row2 = scan.nextInt();
+              int index = scan.nextInt();
+              System.out.println(list.get(row2-1).get(index-1));
+          }catch(IndexOutOfBoundsException e){
+              System.out.println("ERROR!");
+          }
+          
+          
+          
+      }
+
+      scan.close();
+      
+    }
+}
